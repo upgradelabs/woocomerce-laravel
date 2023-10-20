@@ -2,6 +2,7 @@
 
 namespace Upgradelabs\WooCommerce;
 
+use Automattic\WooCommerce\Client;
 use Upgradelabs\WooCommerce\Traits\WooCommerceTrait;
 
 class WooCommerceInit
