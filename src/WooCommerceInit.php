@@ -24,8 +24,11 @@ class WooCommerceInit
      *
      * @return void
      */
-    public function __construct($site)
+    public function __construct()
     {
+
+        $site = session()->has('woo_site') ? session('woo_site') : die('WOO Site is missing');
+
         try {
             $this->headers = [
                 'header_total'       => config('woocommerce.header_total') ?? 'X-WP-Total',
