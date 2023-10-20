@@ -25,9 +25,9 @@ class WooCommerceAnalyticsApi {
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $site)
     {
-        $site = session()->has('woo_site') ? session('woo_site') : die('WOO Site is missing');
+        //$site = session()->has('woo_site') ? session('woo_site') : die('WOO Site is missing');
 
         try {
             $this->headers = [
