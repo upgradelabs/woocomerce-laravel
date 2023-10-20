@@ -22,6 +22,14 @@ WooCommerce Rest API for Laravel. You can Get, Create, Update and Delete your wo
 # Eloquent Style for Product, Customer and Order
 
 ```
+//This fork allows to use several WooCommerce Sites.
+//You can have a Dashboard to manage several WooCommerce
+
+//Before use you need to specify which WooCommerce site you´re using.
+//Just bind to the app service provider
+
+app()->bind(WooCommerceApi::class, fn() => new WooCommerceApi('site_name_in_the_config_file'));
+
 // Where passing multiple parameters
 $products = Product::where('title','hello')->get();
 OR

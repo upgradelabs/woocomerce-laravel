@@ -24,9 +24,6 @@ class WooCommerceApi  {
      */
     public function __construct(string $site)
     {
-
-        //$site = session()->has('woo_site') ? session('woo_site') : die('WOO Site is missing');
-
         try {
             $this->headers = [
                 'header_total'       => config('woocommerce.header_total') ?? 'X-WP-Total',
@@ -45,6 +42,100 @@ class WooCommerceApi  {
                     'timeout'           => config('woocommerce.timeout'),
                 ]
             );
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage(), 1);
+        }
+    }
+    /**
+     * GET method.
+     * Retrieve data.
+
+     * @param string $endpoint API endpoint.
+     * @param array  $options
+     *
+     * @return array
+     */
+    public function all($endpoint = '', $options = [])
+    {
+        try {
+            return $this->client->get($endpoint, $options);
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage(), 1);
+        }
+    }
+
+    /**
+     * GET method.
+     * Retrieve Single data.
+     *
+     * @param string $endpoint API endpoint.
+     * @param array  $options
+     *
+     * @return array
+     */
+    public function find($endpoint = '', $options = [])
+    {
+        try {
+
+
+            return $this->client->get($endpoint, $options);
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage(), 1);
+        }
+    }
+
+    /**
+     * POST method.
+     * Insert data.
+     *
+     * @param string $endpoint API endpoint.
+     * @param array  $data
+     *
+     * @return array
+     */
+    public function create($endpoint, $data)
+    {
+        try {
+
+
+            return $this->client->post($endpoint, $data);
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage(), 1);
+        }
+    }
+
+    /**
+     * PUT method.
+     * Update data.
+     *
+     * @param string $endpoint API endpoint.
+     * @param array  $data
+     *
+     * @return array
+     */
+    public function update($endpoint, $data)
+    {
+        try {
+
+            return $this->client->put($endpoint, $data);
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage(), 1);
+        }
+    }
+
+    /**
+     * DELETE method.
+     * Remove data.
+     *
+     * @param string $endpoint API endpoint.
+     * @param array  $options
+     *
+     * @return array
+     */
+    public function delete($endpoint, $options = [])
+    {
+        try {
+            return $this->client->delete($endpoint, $options);
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage(), 1);
         }

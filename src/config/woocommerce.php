@@ -1,24 +1,34 @@
 <?php
 
 return [
-    /**
-     *================================================================================
-     * Store URL eg: http://example.com
-     *================================================================================.
-     */
-    'store_url'         => env('WOOCOMMERCE_STORE_URL', 'YOUR_STORE_URL'),
 
     /**
      *================================================================================
-     * Consumer Key
+     * Multi Woocommerce sites Duplicate as many as needed
      *================================================================================.
      */
-    'consumer_key'      => env('WOOCOMMERCE_CONSUMER_KEY', 'YOUR_CONSUMER_KEY'),
+    'site1' => [
 
-    /**
-     * Consumer Secret.
-     */
-    'consumer_secret'   => env('WOOCOMMERCE_CONSUMER_SECRET', 'YOUR_CONSUMER_SECRET'),
+            /**
+             *================================================================================
+             * Store URL eg: http://example.com
+             *================================================================================.
+             */
+
+            'store_url'         => env('WOOCOMMERCE_STORE_URL', 'YOUR_STORE_URL'),
+
+            /**
+             *================================================================================
+             * Consumer Key
+             *================================================================================.
+             */
+            'consumer_key'      => env('WOOCOMMERCE_CONSUMER_KEY', 'YOUR_CONSUMER_KEY'),
+
+            /**
+             * Consumer Secret.
+             */
+            'consumer_secret'   => env('WOOCOMMERCE_CONSUMER_SECRET', 'YOUR_CONSUMER_SECRET'),
+    ],
 
     /**
      *================================================================================
