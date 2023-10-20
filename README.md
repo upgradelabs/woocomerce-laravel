@@ -26,7 +26,7 @@ WooCommerce Rest API for Laravel. You can Get, Create, Update and Delete your wo
 //You can have a Dashboard to manage several WooCommerce
 
 //Before use you need to specify which WooCommerce site you´re using.
-//Just bind to the app service provider
+//Just bind to the app container
 
 app()->bind(WooCommerceApi::class, fn() => new WooCommerceApi('site_name_in_the_config_file'));
 
